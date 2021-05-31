@@ -1,0 +1,49 @@
+body{
+  background-image:url("chunab.jpg");
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+label{
+  color:red;
+}
+h4{
+  background-color:white; 
+  color: red; 
+  text-shadow: 1px 1px 2px #000000; 
+  padding:10px;
+}
+input[type=submit]{
+  color:white;
+  padding:5px;
+  background-color:green;
+}
+
+input[type=Reset]{
+  color:white;
+  padding:5px;
+  background-color:red;
+}
+
+input{
+  border-radius:10px;
+  box-shadow:1px 1px 3px #000000 inset;
+   
+}
+form{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 175px;
+  padding:18px;
+  
+}
+.container{
+  margin-right:250px;
+  margin-left: 250px;
+  background-color:rgba(0, 0, 0, 0.5);
+  border-radius: 100px;
+  box-shadow:2px 2px 3px #ffffff; 
+}
+textarea{
+  resize:none;
+  border-radius: 10px;
+}
