@@ -77,25 +77,126 @@
 //
 
 //PHP CREATE FILE
-$myFile = fopen("testfile.txt", 'w');
+//$myFile = fopen("testfile.txt", 'w');
+//
+////PHP WRITE TO FILE
+//$myFile = fopen('testfile.txt', 'w');
+//$txt = "Adebayo Abdulmalik\n";
+//fwrite($myFile, $txt);
+//$txt = "Adebayo Adeola";
+//fwrite($myFile, $txt);
+//fclose($myFile);
+//
+////PHP OVERWRITING
+//$myFile = fopen('testfile.txt', 'w');
+//$txt = "Oni Haleemah\n";
+//fwrite($myFile, $txt);
+//$txt = "Oni Abimbola";
+//fwrite($myFile, $txt);
+//fclose($myFile)
 
-//PHP WRITE TO FILE
-$myFile = fopen('testfile.txt', 'w');
-$txt = "Adebayo Abdulmalik\n";
-fwrite($myFile, $txt);
-$txt = "Adebayo Adeola";
-fwrite($myFile, $txt);
-fclose($myFile);
+////PHP COOKIE
+//$cookie_name = "user";
+//$cookie_value = "John_Doe";
+//setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+//?>
+<!--<html>-->
+<!--<body>-->
+<?php
+//if (!isset($_COOKIE[$cookie_name])){
+//    echo "Cookie named '" .$cookie_name . "' is not set!";
+//} else{
+//    echo "Cookie '" .$cookie_name . "' is set!<br>";
+//    echo "Value is: " . $_COOKIE[$cookie_name];
+//}
+//?>
+<!---->
+<!--</body>-->
+<!--</html>-->
+<!---->
+<!--CHECK IF COOKIES ARE ENABLED-->
+<?php
+//setcookie("test_cookie", "test", time() + 3600, '/');
+//?>
+<!---->
+<!--<html>-->
+<!--<body>-->
+<?php
+// if (count($_COOKIE) > 0){
+//     echo "Cookies are enabled";
+// }else{
+//     echo "Cookies are disabled";
+// }
+//
+//?>
+<!--</body>-->
+<!--</html>-->
 
-//PHP OVERWRITING
-$myFile = fopen('testfile.txt', 'w');
-$txt = "Oni Haleemah\n";
-fwrite($myFile, $txt);
-$txt = "Oni Abimbola";
-fwrite($myFile, $txt);
-fclose($myFile)
+<!--PHP SESSIONS-->
+<?php
+//// Start session.
+//session_start();
+//?>
+<!--<html>-->
+<!--<body>-->
+<?php
+//// Set session variables
+//$_SESSION['favcolor'] = "Green";
+//$_SESSION['favanimal'] = "Cat";
+//echo "Session variables are set";
+//?>
+<!--</body>-->
+<!--</html>-->
 
-?>
+<?php
+//// PHP filter_var Function
+//// Sanitize a string
+//$str = "<h1>Hello World</h1>";
+//$newStr = filter_var($str, FILTER_SANITIZE_STRING);
+//echo $newStr;
+//
+//// Validate an integer
+//$int = 100;
+//
+//if (!filter_var($int, FILTER_VALIDATE_INT) === false){
+//    echo "Integer is valid";
+//}else{
+//    echo "Integer is not valid";
+//}
+
+// Validate and Sanitize an Email Address
+//$email = "milikiadbay@gmail.com";
+//
+////Remove all illegal character from email
+//$email = filter_var($email, FILTER_SANITIZE_EMAIL )
+
+//PHP CALLBACK FUNCTION
+//function my_callback($item){
+//    return strlen($item);
+//}
+//
+//$strings = ["apple", "orange", "banana", "coconut"];
+//$length = array_map("my_callback", $strings);
+//print_r($length);
 
 
+//PHP JSON
+
+//$age  = array("Abdulmalik" => 35000, "Adeola" => "40,000", "Adebayo" => "45,000", "devProMaleek" => 50000);
+//echo json_encode($age);
+
+//PHP Exceptions
+function divide($dividend, $divisor)
+{
+    if ($divisor == 0) {
+        throw new Exception("Division by zero");
+    }
+    return $dividend / $divisor;
+}
+    try {
+        echo divide(5, 0);
+    }
+    catch (Exception $e){
+        echo "Unable to complete process";
+    }
 
