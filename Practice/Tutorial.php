@@ -186,17 +186,76 @@
 //echo json_encode($age);
 
 //PHP Exceptions
-function divide($dividend, $divisor)
-{
-    if ($divisor == 0) {
-        throw new Exception("Division by zero");
-    }
-    return $dividend / $divisor;
-}
-    try {
-        echo divide(5, 0);
-    }
-    catch (Exception $e){
-        echo "Unable to complete process";
+//function divide($dividend, $divisor)
+//{
+//    if ($divisor == 0) {
+//        throw new Exception("Division by zero");
+//    }
+//    return $dividend / $divisor;
+//}
+//    try {
+//        echo divide(5, 0);
+//    }
+//    catch (Exception $e){
+//        echo "Unable to complete process";
+//    }
+
+//PHP OBJECT ORIENTED PROGRAMMING
+
+//Define a class
+//class fruit{
+//    // Properties
+//    public $name;
+//    public $color;
+//
+//    // Methods
+//    function set_name($name){
+//        $this->name = $name;
+//    }
+//    function get_name(){
+//        return $this->name;
+//    }
+//    function set_color($color){
+//        $this->color = $color;
+//    }
+//    function get_color(){
+//        return $this->color;
+//    }
+//}
+//
+//// Define a Objects
+//$apple = new fruit();
+//$banana = new fruit();
+//$apple->set_name("Apple");
+//$banana->set_name("Banana");
+//$apple->set_color("Green");
+//
+//echo $apple->get_name();
+//echo "<br>";
+//echo $banana->get_name();
+//echo "<br>";
+//echo $apple->get_color();
+
+//PHP OOP CONSTRUCTOR
+
+class Fruit{
+    public $name;
+    public $color;
+
+    function __construct($name, $color){
+        $this->name = $name;
+        $this->color = $color;
     }
 
+    function get_name(){
+        return $this->name;
+    }
+    function get_color(){
+        return $this->color;
+    }
+}
+
+$apple = new Fruit('Apple', 'Red');
+echo $apple->get_name();
+echo "<br>";
+echo $apple->get_color();
