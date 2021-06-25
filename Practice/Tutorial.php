@@ -238,24 +238,90 @@
 
 //PHP OOP CONSTRUCTOR
 
-class Fruit{
+//class Fruit{
+//    public $name;
+//    public $color;
+//
+//    function __construct($name, $color){
+//        $this->name = $name;
+//        $this->color = $color;
+//    }
+//
+//    function get_name(){
+//        return $this->name;
+//    }
+//    function get_color(){
+//        return $this->color;
+//    }
+//}
+//
+//$apple = new Fruit('Apple', 'Red');
+//echo $apple->get_name();
+//echo "<br>";
+//echo $apple->get_color();
+
+//// PHP OOP DESTRUCTOR
+//class Fruit{
+//    // Properties
+//    public $name;
+//    public $color;
+//
+//    //Methods
+//    function __construct($name, $color){
+//        $this->name = $name;
+//        $this->color = $color;
+//    }
+//    function get_name(){
+//        return $this->name;
+//    }
+//    function __destruct(){
+//        echo "The fruit is {$this->name} and the color is {$this->color}";
+//    }
+//}
+//
+//$apple = new Fruit('Orange', 'Yellow');
+//echo $apple->get_name();
+//echo "<br>";
+
+//PHP ACCESS MODIFIERS.
+// PROPERTY EXAMPLE
+
+//class Fruits{
+//    public $name;
+//    protected $color;
+//    private $weight;
+//}
+//
+//$mango = new Fruits();
+//
+//$mango->name = "Mango";
+//$mango->color = "Yellow";
+//$mango->weight = "300";
+
+
+//METHODS EXAMPLE
+
+class Fruits{
     public $name;
     public $color;
+    public $weight;
 
-    function __construct($name, $color){
-        $this->name = $name;
-        $this->color = $color;
+    // Methods
+    function set_name($n){
+        $this->name= $n;
     }
 
-    function get_name(){
-        return $this->name;
+    protected function set_color($c){
+        $this->color = $c;
     }
-    function get_color(){
-        return $this->color;
+
+    private function set_weight($w){
+        $this->weight = $w;
     }
 }
 
-$apple = new Fruit('Apple', 'Red');
-echo $apple->get_name();
-echo "<br>";
-echo $apple->get_color();
+$mango = new Fruits();
+$mango->set_name("Mango");
+$mango->set_color("Green");
+$mango->set_weight("300");
+
