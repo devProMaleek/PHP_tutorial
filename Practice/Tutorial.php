@@ -301,27 +301,95 @@
 
 //METHODS EXAMPLE
 
-class Fruits{
+//class Fruits{
+//    public $name;
+//    public $color;
+//    public $weight;
+//
+//    // Methods
+//    function set_name($n){
+//        $this->name= $n;
+//    }
+//
+//    protected function set_color($c){
+//        $this->color = $c;
+//    }
+//
+//    private function set_weight($w){
+//        $this->weight = $w;
+//    }
+//}
+//
+//$mango = new Fruits();
+//$mango->set_name("Mango");
+//$mango->set_color("Green");
+//$mango->set_weight("300");
+
+//OOP INHERITANCE
+
+//class Fruit{
+//    // Properties
+//    public $name;
+//    public  $color;
+//
+//    //Methods
+//    public function __construct($name, $color){
+//        $this->color = $color;
+//        $this->name = $name;
+//    }
+//
+//    public function intro(){
+//    echo "The fruit is {$this->name} and the color is {$this->color}";
+//
+//    }
+//}
+//
+//class Strawberry extends Fruit {
+//    public function message(){
+//        echo "Am i a fruit or a berry?";
+//    }
+//
+//}
+//
+//$Blueberry = new Fruit('Blueberry', 'Black');
+//echo $Blueberry->intro();
+//echo "<br>";
+//$strawberry = new Strawberry('Strawberry', 'Pink');
+//echo $strawberry->message();
+//echo '<br>';
+//echo $strawberry->intro();
+//echo '<br>';
+
+//PHP - OVERRIDING INHERITED METHODS
+class Fruit{
+    public $name;
+    public $color;
+
+    public function __construct($name, $color){
+        $this->color = $color;
+        $this->name = $name;
+    }
+
+    public function intro(){
+        echo "The fruit is {$this->name} and the color is {$this->color}";
+    }
+}
+
+class Strawberry extends Fruit{
     public $name;
     public $color;
     public $weight;
 
-    // Methods
-    function set_name($n){
-        $this->name= $n;
+    public function __construct($name, $color, $weight)
+    {
+        $this->name = $name;
+        $this->color = $color;
+        $this->weight = $weight;
     }
-
-    protected function set_color($c){
-        $this->color = $c;
-    }
-
-    private function set_weight($w){
-        $this->weight = $w;
+    public function intro(){
+        echo "The fruit is {$this->name}, the color is {$this->color}, and the weight is {$this->weight} gram";
     }
 }
 
-$mango = new Fruits();
-$mango->set_name("Mango");
-$mango->set_color("Green");
-$mango->set_weight("300");
-
+$strawberry = new Strawberry('Apple', 'Green', '300');
+$strawberry->intro();
