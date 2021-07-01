@@ -361,35 +361,157 @@
 //echo '<br>';
 
 //PHP - OVERRIDING INHERITED METHODS
-class Fruit{
-    public $name;
-    public $color;
+//class Fruit{
+//    public $name;
+//    public $color;
+//
+//    public function __construct($name, $color){
+//        $this->color = $color;
+//        $this->name = $name;
+//    }
+//
+//    public function intro(){
+//        echo "The fruit is {$this->name} and the color is {$this->color}";
+//    }
+//}
+//
+//class Strawberry extends Fruit{
+//    public $name;
+//    public $color;
+//    public $weight;
+//
+//    public function __construct($name, $color, $weight)
+//    {
+//        $this->name = $name;
+//        $this->color = $color;
+//        $this->weight = $weight;
+//    }
+//    public function intro(){
+//        echo "The fruit is {$this->name}, the color is {$this->color}, and the weight is {$this->weight} gram";
+//    }
+//}
+//
+//$strawberry = new Strawberry('Apple', 'Green', '300');
+//$strawberry->intro();
 
-    public function __construct($name, $color){
-        $this->color = $color;
-        $this->name = $name;
-    }
+//PHP CLASS CONSTANTS
+//class Goodbye {
+//    const LEAVING_MESSAGE = "Thank you for visiting w3schools.com!";
+//}
+//echo Goodbye::LEAVING_MESSAGE;
+//
+//class Goodbye{
+//    const LEAVING_MEESSGAE = "Thanks for practicing php oop";
+//    public function byebye(){
+//        echo self::LEAVING_MEESSGAE;
+//    }
+//}
+//
+//$goodbye = new Goodbye();
+//$goodbye->byebye();
 
-    public function intro(){
-        echo "The fruit is {$this->name} and the color is {$this->color}";
-    }
+//PHP ABSTRACT CLASSES
+
+// Parent Class.
+//abstract class Car {
+//    // Property
+//    public $name;
+//
+//    // Method
+//    public function __construct($name)  {
+//        $this->name = $name;
+//    }
+//
+//    // Abstract Method
+//    abstract public function intro() : string;
+//}
+//
+//// Child Classes
+//class Audi extends Car{
+//    public function intro(): string {
+//        return "Choose german quality! I'm an {$this->name}";
+//    }
+//}
+//class Volvo extends Car{
+//
+//    public function intro(): string
+//    {
+//        // TODO: Implement intro() method.
+//        return "Proud to be Swedish. I'm {$this->name}";
+//    }
+//}
+//
+//class Citroen extends Car{
+//
+//    public function intro(): string
+//    {
+//        // TODO: Implement intro() method.
+//        return "French extravagance! I'm a {$this->name}";
+//    }
+//}
+//
+//// Create objects from the child classes
+//$car = new Audi('Audi');
+//echo $car->intro();
+//echo "<br>";
+//
+//$volvo = new Volvo('Volvo');
+//echo $volvo->intro();
+//echo "<br>";
+//
+//$citroen = new Citroen('citroen');
+//echo $citroen->intro();
+//
+//// More Examples
+//// Parent Class
+//abstract class ParentClass{
+//    // Abstract method with an argument
+//    abstract public function prefixName($name);
+//}
+//
+//// Child Class
+//
+//class ChildClass extends ParentClass{
+//
+//    public function prefixName($name): string
+//    {
+//        // TODO: Implement prefixName() method.
+//        if ($name == "John Doe") {
+//            $prefix = "Mr. ";
+//        }elseif ($name == "Jane Doe"){
+//            $prefix = "Mrs. ";
+//        }else{
+//            $prefix = "";
+//        }
+//        return "{$prefix} {$name}";
+//    }
+//}
+//
+//$class = new ChildClass;
+//echo $class->prefixName("John Doe");
+//echo "<br>";
+//echo $class->prefixName("Jane Doe");
+
+abstract class ParentClass{
+    //Abstract method with an argument
+    abstract public function prefixName($name) : string;
 }
 
-class Strawberry extends Fruit{
-    public $name;
-    public $color;
-    public $weight;
+class ChildClass extends ParentClass{
 
-    public function __construct($name, $color, $weight)
+    public function prefixName($name, $separator = ". ", $greet = "Dear"): string
     {
-        $this->name = $name;
-        $this->color = $color;
-        $this->weight = $weight;
+        // TODO: Implement prefixName() method.
+        if ($name == "John Doe"){
+            $prefix = "Mr";
+        }elseif ($name == "Jane Doe"){
+            $prefix = "Mrs";
+        }else{
+            $prefix = "";
+        }
+        return "{$greet} {$prefix}{$separator} {$name}";
     }
-    public function intro(){
-        echo "The fruit is {$this->name}, the color is {$this->color}, and the weight is {$this->weight} gram";
-    }
-}
 
-$strawberry = new Strawberry('Apple', 'Green', '300');
-$strawberry->intro();
+}
+$class = new ChildClass;
+echo $class->prefixName("John Doe");

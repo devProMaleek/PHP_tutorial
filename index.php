@@ -50,24 +50,24 @@ $cars = array("Lexus","Acura", "Toyota","Honda")
 <?php
 // Object and class datatype.
 echo "<h2> Object and class Datatype</h2>";
-class Car {
-    public $color;
-    public $model;
-    public function __construct($color, $model) {
-        $this->color = $color;
-        $this->model = $model;
-    }
-    public function message() {
-        return "My car is a ".$this->color. " " .$this->model. "!";
-    }
-}
+//class Car {
+//    public $color;
+//    public $model;
+//    public function __construct($color, $model) {
+//        $this->color = $color;
+//        $this->model = $model;
+//    }
+//    public function message() {
+//        return "My car is a ".$this->color. " " .$this->model. "!";
+//    }
+//}
 
-$myCar = new Car("black", "Lexus");
-echo $myCar -> message();
-echo "<br>";
-
-$myCar = new Car("red", "Benz");
-echo $myCar -> message();
+//$myCar = new Car("black", "Lexus");
+//echo $myCar -> message();
+//echo "<br>";
+//
+//$myCar = new Car("red", "Benz");
+//echo $myCar -> message();
 
 // Null datatype
 $x = "Hello world";
